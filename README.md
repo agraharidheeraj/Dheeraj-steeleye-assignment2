@@ -1,58 +1,76 @@
 # Dheeraj-steeleye-assignment2
 
-The highlightHTMLContent function is a JavaScript function that takes three inputs: htmlContent, plainText, and plainTextPositions. The purpose of this function is to highlight certain portions of the htmlContent based on the positions specified in the plainTextPositions array.
+# highlightHTMLContent
 
-#explanation of the code
-The function begins by iterating through each element in the plainTextPositions array using plainTextPositions.forEach((d) => { ... }).
-
-
-
+`highlightHTMLContent` is a JavaScript function that takes HTML content, plain text, and an array of plain text positions as input and highlights the plain text within the HTML content using `<mark>` tags. It returns the modified HTML content with the specified text marked with the `<mark>` element.
 
 ## Installation
 
-Install and run frequency-app with npm-vite
+The function can be used directly in a JavaScript environment without any additional installation or setup.
 
-```bash
-npm create vite@latest
-cd my-project
-npm install
-npm run dev 
+## Usage
+
+### Syntax
+
+```javascript
+highlightHTMLContent(htmlContent, plainText, plainTextPositions)
 ```
 
-Install the recharts npm package for histogram
+### Parameters
 
-```bash
-npm install recharts
+- `htmlContent` (string): The HTML content in which the plain text needs to be highlighted.
+- `plainText` (string): The plain text that needs to be highlighted within the HTML content.
+- `plainTextPositions` (array of objects): An array of objects representing the start and end positions of the plain text to be highlighted.
+
+Each object in the `plainTextPositions` array should have the following properties:
+
+- `start` (number): The start index of the plain text in the `plainText` string.
+- `end` (number): The end index (exclusive) of the plain text in the `plainText` string.
+
+### Returns
+
+The function returns the modified HTML content with the specified plain text marked with the `<mark>` element.
+
+### Example
+
+```javascript
+const highlightHTMLContent = require('./highlightHTMLContent');
+
+const htmlContent = '<div><p>This is a test</p></div>';
+const plainText = 'This is a test';
+const plainTextPositions = [
+  {
+    start: 0,
+    end: 4,
+  },
+  {
+    start: 10,
+    end: 12,
+  },
+];
+
+const highlightedContent = highlightHTMLContent(htmlContent, plainText, plainTextPositions);
+console.log(highlightedContent);
 ```
-Install the axios npm package for fetching text file
-```bash
-npm install axios
+
+Output:
+
+```html
+<div><p><mark>This</mark> is a <mark>te</mark>st</p></div>
 ```
 
+## Testing
 
-    
-## Documentation
-
-1. Create a folder named components in src folder.
-2. Create files named FileFetch.jsx , FileFetch.css in components folder.
-3. Create a functional component in FileFetch.jsx.
-4. import axios and some child components from recharts.
+The `highlightHTMLContent` function comes with unit tests written using Jest to ensure its correctness and proper behavior in various scenarios. To run the tests, execute the following command:
 
 ```bash
-import axios from "axios";
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Label,
-  LabelList,
-} from "recharts";
+npm test
 ```
-# Count frequencies 
-1. Call the function calculateLetterFrequencies on onclick with passing text file from submit button.
 
-```bash
+## Contributing
 
+If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request on the GitHub repository.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
