@@ -67,10 +67,4 @@ The `highlightHTMLContent` function comes with unit tests written using Jest to 
 npm test
 ```
 
-## Contributing
-
-If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request on the GitHub repository.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Thankyou
