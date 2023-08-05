@@ -69,6 +69,7 @@ npm init -y
 npm i jest --save-dev
 ```
 
+## Execute this command and run the tests
 ```bash
 npm test
 ```
