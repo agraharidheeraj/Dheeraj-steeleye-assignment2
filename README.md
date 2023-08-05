@@ -63,6 +63,12 @@ Output:
 
 The `highlightHTMLContent` function comes with unit tests written using Jest to ensure its correctness and proper behavior in various scenarios. To run the tests, execute the following command:
 
+## Installation
+```bash
+npm init -y 
+npm i jest --save-dev
+```
+
 ```bash
 npm test
 ```
